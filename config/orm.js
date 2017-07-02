@@ -1,42 +1,49 @@
-var connection = require("./connection");
+var connection = require("./connection.js");
+
+//   selectWhere: (tableInput, colToSearch, valOfCol) => {
+//     return new Promise ((resolve, reject) => {
+//     var queryString = "SELECT * FROM ?? WHERE ?? = ?";
+
+//     connection.query(queryString, [tableInput, colToSearch, valOfCol], (err, result) => {
+//         console.log(result);
+//         resolve(result);
+//       });
+//     });
+//   }
 
 var orm = {
-    selectAll: (table) => {
-        return new Promise( (reject, resolve) => {
-            connection.query("SELECT * FROM ?", table, (err, result) => {
-                if (err) throw err;
-                console.log(result);
-                resolve(result);
-            });
+    selectAll: (cb) => {
+        var queryString = `SELECT * FROM burgers`;
+        
+        connection.query(queryString, 
+        (err, result) => {
+            if (err) throw err;
+            console.log(result);
+            cb(result);
+        });         
+    },
+    insertOne: (value, cb) => {
+        connection.query(`INSERT INTO burgers SET ?`, [{
+            burger_name: value,
+            devoured: false
+        }], 
+        (err, result) => {
+            if (err) throw err;
+            console.log(result);
+            cb(result);
         });
     },
-    insertOne: (column, value) => {
-        return new Promise( (reject, resolve) => {
-            connection.query(`INSERT INTO burgers VALUES ?`, [{
-                burger_name: value,
-                devoured: FALSE,
-                date: CURRENT_TIMESTAMP
-            }], (err, result) => {
-                if (err) throw err;
-                console.log(result);
-                resolve(result);
-            });
-        });
-    },
-    updateOne: (column, value, id) => {
-        return new Promise( (reject, resolve) => {
-            connection.query(`INSERT INTO burgers SET ? WHERE ?`, [{
-                burger_name: value,
-                devoured: FALSE,
-                date: CURRENT_TIMESTAMP
-            },
-            {
-                id: id
-            }], (err, result) =>{
-                if (err) throw err;
-                console.log(result);
-                resolve(result);
-            });
+    updateOne: (id, cb) => {
+        connection.query(`UPDATE burgers SET ? WHERE ?`, [{
+            devoured: true
+        },
+        {
+            id: id
+        }], 
+        (err, result) =>{
+            if (err) throw err;
+            console.log(result);
+            cb(result);
         });
     }
 };

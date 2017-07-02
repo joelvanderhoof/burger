@@ -5,28 +5,32 @@ var router = express.Router();
 
 //Create routes to handle AJAX requests for CRUD
 router.get("/", (req, res) => {
-    burger.all().then(
-        (result) => {
-            var burgerOjbect = {
-                data: result
-            }
+    burger.all( (data) => {
+        var burgerOjbect = {
+            burgers: data
+        }
             res.render("index", burgerOjbect);
         }   
     );
-})
+    })
     .post("/", (req, res) => {
-        burger.create(burger_name, req.body.name).then(
+        console.log(req.body);
+        burger.create(req.body.burger_name,
             (result) => {
                 //Do something with the created burger
-                res.json(result);
+                //res.json(result);
+                res.redirect("/");
             }
         );
     })
     .put("/:id?", (req, res) => {
-        burger.update(burger_name, req.body.name).then(
+        var id = parseInt(req.params.id);
+        console.log(req.params.id);
+        burger.update(id, 
             (result) => {
                 //Update the burger 
-                res.json(result);
+                //res.json(result);
+                res.redirect("/");
             }
         );
     });

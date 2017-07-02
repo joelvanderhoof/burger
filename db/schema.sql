@@ -2,7 +2,7 @@ CREATE DATABASE burgers_db;
 
 Use burgers_db;
 
-CREATE TABLE parties
+CREATE TABLE burgers
 (
 	id int NOT NULL AUTO_INCREMENT,
 	burger_name varchar(255) NOT NULL,
