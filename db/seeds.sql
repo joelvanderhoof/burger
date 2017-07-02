@@ -1,5 +1,5 @@
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Mega Burger', false, CURRENT_TIMESTAMP);
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Ultra Burger', false, CURRENT_TIMESTAMP);
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Super Mega Ultra Burger', false, CURRENT_TIMESTAMP);
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Whiskey', false, CURRENT_TIMESTAMP);
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Even More Bacon', false, CURRENT_TIMESTAMP);
+INSERT INTO burgers (burger_name) VALUES ('Mega Burger');
+INSERT INTO burgers (burger_name) VALUES ('Ultra Burger');
+INSERT INTO burgers (burger_name) VALUES ('Super Mega Ultra Burger');
+INSERT INTO burgers (burger_name) VALUES ('Whiskey');
+INSERT INTO burgers (burger_name) VALUES ('Even More Bacon');

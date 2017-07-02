@@ -1,7 +1,36 @@
+body {
+  width: 760;
+  background: lightgray;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 h4 {
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
+}
+
+.burger-menu {
+  width: 300px;
+  float: left;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.devoured-burgers {
+  width: 300px;
+  float: right;
 }
 
 .label {
@@ -11,9 +40,18 @@ li {
 .create-update-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
 }
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.footer {
+  display: block;
+  margin-top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
 }
