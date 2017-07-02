@@ -17,8 +17,6 @@ router.get("/", (req, res) => {
         console.log(req.body);
         burger.create(req.body.burger_name,
             (result) => {
-                //Do something with the created burger
-                //res.json(result);
                 res.redirect("/");
             }
         );
@@ -28,8 +26,6 @@ router.get("/", (req, res) => {
         console.log(req.params.id);
         burger.update(id, 
             (result) => {
-                //Update the burger 
-                //res.json(result);
                 res.redirect("/");
             }
         );

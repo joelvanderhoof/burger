@@ -2,7 +2,10 @@ var mysql = require("mysql");
 
 var connection;
 
-if(process.env.JAWSDB_URL) {
+// Configure the connection
+// If the app is deployed on Heroku, the connection will be set that
+// Otherwise, the connection will be set to run on the local environment.
+if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else { 
     connection = mysql.createConnection({
@@ -14,6 +17,7 @@ if(process.env.JAWSDB_URL) {
     });
 }
 
+// Test the connection
 connection.connect((err, data) => {
     if (err) {
         console.log(`error connecting: ${err.stack}`);

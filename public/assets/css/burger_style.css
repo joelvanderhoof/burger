@@ -1,6 +1,7 @@
 body {
   width: 760;
   background: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -19,6 +20,8 @@ img {
 li {
   padding: 5px;
   margin: 5px;
+  background-color: white;
+  border: 5 px;
 }
 
 .burger-menu {

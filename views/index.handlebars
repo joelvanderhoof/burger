@@ -6,7 +6,7 @@
 
 <div class="burger-menu">
   <h4>Burger Menu</h4>
-  <ul>
+  <ol>
     {{#each burgers}}
       {{#unless this.devoured}}
         <li>
@@ -20,12 +20,12 @@
         </li>
       {{/unless}}
     {{/each}}
-  </ul>
+  </ol>
 </div>
 
 <div class="devoured-burgers">
   <h4>Devoured Burgers</h4>
-  <ul>
+  <ol>
     {{#each burgers}}
       {{#if this.devoured}}
         <li>
@@ -34,7 +34,7 @@
         </li>
       {{/if}}
     {{/each}}
-  </ul>
+  </ol>
 </div>
 
 <div class="footer">

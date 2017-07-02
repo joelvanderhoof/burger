@@ -1,16 +1,5 @@
 var connection = require("./connection.js");
 
-//   selectWhere: (tableInput, colToSearch, valOfCol) => {
-//     return new Promise ((resolve, reject) => {
-//     var queryString = "SELECT * FROM ?? WHERE ?? = ?";
-
-//     connection.query(queryString, [tableInput, colToSearch, valOfCol], (err, result) => {
-//         console.log(result);
-//         resolve(result);
-//       });
-//     });
-//   }
-
 var orm = {
     selectAll: (cb) => {
         var queryString = `SELECT * FROM burgers`;
@@ -18,7 +7,6 @@ var orm = {
         connection.query(queryString, 
         (err, result) => {
             if (err) throw err;
-            //console.log(result);
             cb(result);
         });         
     },
@@ -29,7 +17,6 @@ var orm = {
         }], 
         (err, result) => {
             if (err) throw err;
-            //console.log(result);
             cb(result);
         });
     },
@@ -42,7 +29,6 @@ var orm = {
         }], 
         (err, result) =>{
             if (err) throw err;
-            //console.log(result);
             cb(result);
         });
     }
